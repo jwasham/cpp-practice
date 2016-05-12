@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <climits>
 
 using namespace std;
 
@@ -11,6 +10,7 @@ int getAge();
 void printAge(int age);
 void showTypeSizes();
 void funWithEscaping();
+void narrowing();
 
 int main() {
 
@@ -21,6 +21,7 @@ int main() {
 //    printAge(age);
     showTypeSizes();
 //    funWithEscaping();
+    narrowing();
 
     return EXIT_SUCCESS;
 }
@@ -97,4 +98,17 @@ void funWithEscaping()
     cin >> secretNumber;
 
     cout << "Verified." << endl;
+}
+
+void narrowing()
+{
+    const int x = 66;
+    //int y = 67;
+    int cans {6};
+    //int weight {12.03};
+    int weight {12};
+    char c = {x};
+    //char d = {y}; // will not work because y is not const
+
+    cout << "Total weight (" << c << ") = " << cans * weight << endl;
 }
