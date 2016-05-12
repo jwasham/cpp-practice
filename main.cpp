@@ -11,6 +11,9 @@ void printAge(int age);
 void showTypeSizes();
 void funWithEscaping();
 void narrowing();
+void typeCasting();
+void autoTyping();
+void secondsToTime();
 
 int main() {
 
@@ -22,12 +25,14 @@ int main() {
     showTypeSizes();
 //    funWithEscaping();
     narrowing();
+    typeCasting();
+    autoTyping();
+    secondsToTime();
 
     return EXIT_SUCCESS;
 }
 
-void testCout()
-{
+void testCout() {
     int carrots = 25;
 
     cout << "Hello, World! I have " << carrots << " carrots!" << endl;
@@ -35,8 +40,7 @@ void testCout()
     cout << "Ate one, now " << --carrots << " carrots." <<endl;
 }
 
-void doMath()
-{
+void doMath() {
 
     double target = 6.25;
     double root = sqrt(target);
@@ -50,13 +54,11 @@ void doMath()
     cout << "The base " << base << " raised to the power of " << exp << " is " << powered << endl;
 }
 
-void showRandom()
-{
+void showRandom() {
     cout << "Here's a random integer: " << rand() << endl;
 }
 
-int getAge()
-{
+int getAge() {
 
     int age;
 
@@ -66,15 +68,13 @@ int getAge()
     return age;
 }
 
-void printAge(int age)
-{
+void printAge(int age) {
     cout << "Wow, " << age << ", huh? That's " << age * 12 <<  " months." << endl;
 
 //    cout << "and age is stored here: " << &age << endl;
 }
 
-void showTypeSizes()
-{
+void showTypeSizes() {
     int int_size = sizeof(int);
     int byte_size = CHAR_BIT;
     int max_int = INT_MAX;
@@ -90,8 +90,7 @@ void showTypeSizes()
     cout << "max long long: " << max_llong << endl;
 }
 
-void funWithEscaping()
-{
+void funWithEscaping() {
     cout << "Enter a number: ________\b\b\b\b\b\b\b\b";  // back up on the underscores
 
     int secretNumber;
@@ -100,8 +99,7 @@ void funWithEscaping()
     cout << "Verified." << endl;
 }
 
-void narrowing()
-{
+void narrowing() {
     const int x = 66;
     //int y = 67;
     int cans {6};
@@ -111,4 +109,61 @@ void narrowing()
     //char d = {y}; // will not work because y is not const
 
     cout << "Total weight (" << c << ") = " << cans * weight << endl;
+}
+
+void typeCasting() {
+    const double t1 {12.94159159159159};
+    const double t2 {12.99};
+
+    int total = t1 + t2;
+
+    int otherTotal = int(t1) + int(t2);
+
+    cout << "total = " << total << " - cast after addition." << endl;
+    cout << "other = " << otherTotal << " - cast before addition." << endl;
+
+    char c {'M'};
+    cout << "The character code for " << c << " is " << int(c) << endl;
+
+    cout << "Doing restrictive type casting now..." << endl;
+
+    int foo1 = static_cast<int>(t1);
+    float foo2 = static_cast<float>(t1);
+
+    cout << "foo1<int> is " << foo1 << endl;
+    cout << "foo2<float> is " << foo2 << endl;
+
+    const int someNum {88};
+    cout << "The letter for " << someNum << " is: " << static_cast<char>(someNum) << endl;
+
+    char myc {someNum};
+    cout << "The letter for " << someNum << " is: " << myc << endl;
+
+}
+
+void autoTyping() {
+    auto thing1 = 245.5;
+    auto thing2 = 12345.59234L;
+    auto thing3 = 0;
+    // auto thing4 = U'/U00002155'; // wchar_t
+    auto thing5 = 8.25f / 2.5; // double
+}
+
+void secondsToTime() {
+
+    const int secondsPerMinute {60};
+    const int secondsPerHour {secondsPerMinute * 60};
+    const int secondsPerDay {secondsPerHour * 24};
+
+    int inputSeconds {0};
+
+    cout << "Enter the number of seconds to convert: ";
+    cin >> inputSeconds;
+
+    cout << inputSeconds << " seconds = "
+         << inputSeconds/secondsPerDay << " days, "
+         << (inputSeconds % secondsPerDay) / secondsPerHour << " hours, "
+         << (inputSeconds % secondsPerHour) / secondsPerMinute << " minutes, "
+         << inputSeconds % secondsPerMinute << " seconds, "
+         << endl;
 }
