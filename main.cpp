@@ -14,6 +14,7 @@ void narrowing();
 void typeCasting();
 void autoTyping();
 void secondsToTime();
+void stringPractice();
 
 int main() {
 
@@ -27,7 +28,8 @@ int main() {
     narrowing();
     typeCasting();
     autoTyping();
-    secondsToTime();
+//    secondsToTime();
+    stringPractice();
 
     return EXIT_SUCCESS;
 }
@@ -166,4 +168,28 @@ void secondsToTime() {
          << (inputSeconds % secondsPerHour) / secondsPerMinute << " minutes, "
          << inputSeconds % secondsPerMinute << " seconds, "
          << endl;
+}
+
+void stringPractice() {
+
+    char name[] { "Reginald" };
+
+    string lastName { "Filbertson" };
+
+    cout << "The name is: " << name << " " << lastName << endl;
+    cout << "lastName is " << lastName.size() << " characters." << endl;
+
+    cout << "Changing the first and last characters of lastName..." << endl;
+
+    lastName[0] = 'G';
+    lastName[lastName.length() - 1] = 'x';
+    cout << "Now the name is: " << name << " " << lastName << endl;
+
+    cout << "Changing the first and last characters of name (C-style string)..." << endl;
+
+    name[0] = 'Z';
+    int nameLength = sizeof name / sizeof name[0];
+    cout << "name length is " << nameLength << endl;
+    name[nameLength - 2] = 'a'; // - 2 to account for null character \0
+    cout << "Now the name is: " << name << " " << lastName << endl;
 }
