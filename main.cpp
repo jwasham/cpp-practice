@@ -15,8 +15,9 @@ int main() {
     narrowing();
     typeCasting();
     autoTyping();
-    secondsToTime();
+//    secondsToTime();
     stringPractice();
+    makeStruct();
 
     return EXIT_SUCCESS;
 }

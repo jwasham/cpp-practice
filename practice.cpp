@@ -167,4 +167,37 @@ void stringPractice() {
 
     cout << "Now a raw string..." << endl;
     cout << R"("Ew, I think this string is raw," she said.)" << endl; // thanks C++11
+
+    cout << "Another raw string..." << endl;
+    cout << R"(A newline looks like \n and a null terminator looks like \0.)" << endl;
+}
+
+void makeStruct() {
+
+    struct automobile {
+        float length;
+        float width;
+        float height;
+        float weight;
+        int horsepower;
+        int year;
+        string make;
+        string model;
+    };
+
+    automobile jeep = {
+            184.4,
+            73.7,
+            72.6,
+            4521, // lbs
+            285,  // hp
+            2015,
+            "",
+            ""
+    };
+
+    jeep.make = "Jeep";
+    jeep.model = "Wrangler";
+
+    cout << "It's a " << jeep.year << " " << jeep.make << " " << jeep.model << "." << endl;
 }
