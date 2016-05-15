@@ -18,6 +18,7 @@ int main() {
 //    secondsToTime();
     stringPractice();
     makeStruct();
+    getToThePointer();
 
     return EXIT_SUCCESS;
 }

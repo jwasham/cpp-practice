@@ -201,3 +201,27 @@ void makeStruct() {
 
     cout << "It's a " << jeep.year << " " << jeep.make << " " << jeep.model << "." << endl;
 }
+
+void getToThePointer() {
+
+    int * numbers = new int[3];
+    numbers[0] = 100;
+    numbers[1] = 200;
+    numbers[2] = 300;
+
+    cout << "The second number is: " << numbers[1] << endl;
+    cout << "The memory address for numbers (a pointer) is: " << numbers << endl;
+
+    cout << "Freeing up memory on the heap..." << endl;
+
+    delete numbers;
+
+    cout << "Making more numbers..." << endl;
+
+    int moreNumbers[3] {150, 250, 350};
+
+    cout << "The second number is: " << moreNumbers[1] << endl;
+    cout << "The memory address for moreNumbers (an array) is: " << (int *) moreNumbers << endl;
+
+    // no need to free stack memory
+}

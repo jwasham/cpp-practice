@@ -18,3 +18,4 @@ void autoTyping();
 void secondsToTime();
 void stringPractice();
 void makeStruct();
+void getToThePointer();
