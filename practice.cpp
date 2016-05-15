@@ -1,4 +1,6 @@
 #include <cmath>
+#include <vector>
+#include <array>
 
 using namespace std;
 
@@ -212,9 +214,15 @@ void getToThePointer() {
     cout << "The second number is: " << numbers[1] << endl;
     cout << "The memory address for numbers (a pointer) is: " << numbers << endl;
 
+    cout << "Doing a little pointer math..." << endl;
+
+    cout << "The first number is: " << *numbers << endl;
+    cout << "The second number is: " << *(numbers + 1) << endl;
+    cout << "The third number is: " << *(numbers + 2) << endl;
+
     cout << "Freeing up memory on the heap..." << endl;
 
-    delete numbers;
+    delete [] numbers;
 
     cout << "Making more numbers..." << endl;
 
@@ -224,4 +232,28 @@ void getToThePointer() {
     cout << "The memory address for moreNumbers (an array) is: " << (int *) moreNumbers << endl;
 
     // no need to free stack memory
+}
+
+void whatsYourVector() {
+
+    vector<int> iv {1, 3, 5, 7, 9};
+    int addendum = 11;
+
+    cout << "vector starts with: " << iv.front() << endl;
+    cout << "vector ends with: " << iv.back() << endl;
+    cout << "adding to vector... " << endl;
+    iv.push_back(addendum);
+    cout << "vector ends with: " << iv.back() << endl;
+    cout << "removing first element from vector... " << endl;
+    iv.erase(iv.begin());
+    cout << "vector starts with: " << iv.front() << endl;
+
+    // compared to array
+
+    cout << "now some array fun... " << endl;
+
+    array<int, 5> ia {1, 3, 5, 7, 9};
+
+    cout << "array starts with: " << ia.front() << endl;
+    cout << "array ends with: " << ia.back() << endl;
 }

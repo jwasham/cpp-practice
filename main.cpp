@@ -19,6 +19,7 @@ int main() {
     stringPractice();
     makeStruct();
     getToThePointer();
+    whatsYourVector();
 
     return EXIT_SUCCESS;
 }

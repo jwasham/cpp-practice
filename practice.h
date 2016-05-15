@@ -19,3 +19,4 @@ void secondsToTime();
 void stringPractice();
 void makeStruct();
 void getToThePointer();
+void whatsYourVector();
