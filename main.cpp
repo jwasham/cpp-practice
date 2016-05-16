@@ -20,6 +20,7 @@ int main() {
     makeStruct();
     getToThePointer();
     whatsYourVector();
+    rangeLoop();
 
     return EXIT_SUCCESS;
 }

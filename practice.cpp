@@ -257,3 +257,23 @@ void whatsYourVector() {
     cout << "array starts with: " << ia.front() << endl;
     cout << "array ends with: " << ia.back() << endl;
 }
+
+/**
+ * C++11 range-based loops
+ */
+void rangeLoop() {
+
+    vector<int> temperatures {13, 53, 64, 56, 14, 25};
+
+    for (int i: temperatures) {
+        cout << "Range item: " << i << endl;
+    }
+
+    double lengths[3] {463.2, 774.5, 836.3};
+
+    for (double &i: lengths) {
+        // will mutate lengths as a reference
+        i = i * 1.27;
+        cout << "New length: " << i << endl;
+    }
+}

@@ -20,3 +20,4 @@ void stringPractice();
 void makeStruct();
 void getToThePointer();
 void whatsYourVector();
+void rangeLoop();
