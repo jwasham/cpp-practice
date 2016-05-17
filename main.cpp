@@ -21,6 +21,7 @@ int main() {
     getToThePointer();
     whatsYourVector();
     rangeLoop();
+    inputTests();
 
     return EXIT_SUCCESS;
 }

@@ -21,3 +21,4 @@ void makeStruct();
 void getToThePointer();
 void whatsYourVector();
 void rangeLoop();
+void inputTests();

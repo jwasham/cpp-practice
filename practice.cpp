@@ -1,6 +1,8 @@
 #include <cmath>
 #include <vector>
 #include <array>
+#include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -276,4 +278,30 @@ void rangeLoop() {
         i = i * 1.27;
         cout << "New length: " << i << endl;
     }
+}
+
+void inputTests() {
+
+    char ch;
+    char changed;
+    string log {""};
+
+    cout << "Enter a few letters. I'll uppercase them or lowercase them <0 to quit>: " << endl;
+
+    while (cin.get(ch) and ch != '0') {
+
+        if (isupper(ch)) {
+            changed = tolower(ch);
+        } else if (islower(ch)) {
+            changed = toupper(ch);
+        } else {
+            changed = ch;
+        }
+
+        log += ch;
+
+        cout << changed;
+    }
+
+    cout << "All done then. You entered: " << log << endl;
 }
