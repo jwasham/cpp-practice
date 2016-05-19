@@ -24,6 +24,8 @@ int main() {
 //    inputTests();
     functionSignatures();
     functionSignaturesMore();
+    candyTime();
+    testMaxN();
 
     return EXIT_SUCCESS;
 }

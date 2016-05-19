@@ -4,6 +4,22 @@
 
 #endif //CPP_PRACTICE_PRACTICE_H
 
+struct box
+{
+    char maker[40];
+    float height;
+    float width;
+    float length;
+    float volume;
+};
+
+struct CandyBar
+{
+    char brand[20];
+    double weight;
+    int calories;
+};
+
 void doMath();
 void testCout();
 void showRandom();
@@ -28,16 +44,6 @@ void functionSignaturesMore();
 void iquote(int);
 void iquote(double);
 void iquote(std::string);
-
-struct box
-{
-    char maker[40];
-    float height;
-    float width;
-    float length;
-    float volume;
-};
-
 void displayBox(const box &);
 void computeVolume(box &);
 
@@ -49,5 +55,25 @@ T larger(T a, T b) {
 box & getBigger(box & b1, box & b2);
 
 void printItAgainSam(const char * message, int again = 0);
+
+void candyTime();
+void buildABar(CandyBar & bar, char * name = "Millennium Munch", double weight = 2.85, int calories = 350);
+void showCandy(const CandyBar &);
+
+void testMaxN();
+
+template <class T>
+T maxn(const T * arr, int count = 5) {
+
+    T max = 0;
+
+    for (int i = 0; i < count; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    return max;
+}
 
 #include "practice.cpp"

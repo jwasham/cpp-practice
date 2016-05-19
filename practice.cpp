@@ -409,3 +409,38 @@ void printItAgainSam(const char * message, int again) {
         cout << message << endl;
     }
 }
+
+void candyTime() {
+    CandyBar yumBar {};
+
+    buildABar(yumBar);
+    showCandy(yumBar);
+
+    CandyBar newBar {};
+
+    buildABar(newBar, "SuperYums", 6.4, 425);
+    showCandy(newBar);
+}
+
+void buildABar(CandyBar & bar, char * name, double weight, int calories) {
+
+    strcpy(bar.brand, name);
+    bar.weight = weight;
+    bar.calories = calories;
+}
+
+void showCandy(const CandyBar & bar) {
+    cout << bar.brand << " - weight: " << bar.weight << " ounces, calories: " << bar.calories << endl;
+}
+
+void testMaxN() {
+    int textInts[] {23, 35, 7, 2, 9};
+
+    int maxInt = maxn(textInts);
+    cout << "Max int: " << maxInt << endl;
+
+    double testDbls[] {0.2, 43.2, 0.002, 5.2, 9.3};
+
+    double maxDbl = maxn(testDbls);
+    cout << "Max double: " << maxDbl << endl;
+}
