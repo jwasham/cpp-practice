@@ -305,3 +305,52 @@ void inputTests() {
 
     cout << "All done then. You entered: " << log << endl;
 }
+
+void functionSignatures() {
+
+    int n = 6;
+    double d = 5.2;
+    string name = "Todd";
+
+    iquote(n);
+    iquote(d);
+    iquote(name);
+
+    box movingBox = {
+        "U-Haul",
+        3.6,
+        2.8,
+        4.5
+        // omitting volume - will be set to 0
+    };
+
+    displayBox(movingBox);
+
+    computeVolume(movingBox);
+
+    displayBox(movingBox);
+}
+
+void iquote(int n) {
+    cout << '"' << n << '"' << endl;
+}
+
+void iquote(double d) {
+    cout << '"' << d << '"' << endl;
+}
+
+void iquote(string s) {
+    cout << '"' << s << '"' << endl;
+}
+
+void displayBox(const box & b) {
+    cout << "Maker: " << b.maker << endl
+         << "Height: " << b.height << endl
+         << "Width: " << b.width << endl
+         << "Length: " << b.length << endl
+         << "Volume: " << b.volume << endl;
+}
+
+void computeVolume(box & b) {
+    b.volume = b.length * b.width * b.height;
+}

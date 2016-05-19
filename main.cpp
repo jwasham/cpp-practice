@@ -21,7 +21,8 @@ int main() {
     getToThePointer();
     whatsYourVector();
     rangeLoop();
-    inputTests();
+//    inputTests();
+    functionSignatures();
 
     return EXIT_SUCCESS;
 }

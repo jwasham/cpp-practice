@@ -1,4 +1,3 @@
-#include "practice.cpp"
 
 #ifndef CPP_PRACTICE_PRACTICE_H
 #define CPP_PRACTICE_PRACTICE_H
@@ -22,3 +21,23 @@ void getToThePointer();
 void whatsYourVector();
 void rangeLoop();
 void inputTests();
+void functionSignatures();
+
+// these are used by functionSignatures
+void iquote(int);
+void iquote(double);
+void iquote(std::string);
+
+struct box
+{
+    char maker[40];
+    float height;
+    float width;
+    float length;
+    float volume;
+};
+
+void displayBox(const box &);
+void computeVolume(box &);
+
+#include "practice.cpp"
