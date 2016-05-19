@@ -23,6 +23,7 @@ int main() {
     rangeLoop();
 //    inputTests();
     functionSignatures();
+    functionSignaturesMore();
 
     return EXIT_SUCCESS;
 }

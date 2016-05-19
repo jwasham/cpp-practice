@@ -329,6 +329,32 @@ void functionSignatures() {
     computeVolume(movingBox);
 
     displayBox(movingBox);
+
+    // template
+
+    double d1 { 6.5 };
+    double d2 { 3.2 };
+
+    cout << "Larger double is " << larger(d1, d2) << endl;
+
+    int i1 = 13;
+    int i2 = 98;
+
+    cout << "Larger integer is " << larger(i1, i2) << endl;
+
+    box otherBox = {
+        "Home Depot",
+        12.8,
+        1.1,
+        4.1
+        // omitting volume - will be set to 0
+    };
+
+    computeVolume(otherBox);
+
+    box & larger = getBigger(movingBox, otherBox);
+
+    cout << "Larger box is: " << larger.maker << " at " << larger.volume << endl;
 }
 
 void iquote(int n) {
@@ -353,4 +379,33 @@ void displayBox(const box & b) {
 
 void computeVolume(box & b) {
     b.volume = b.length * b.width * b.height;
+}
+
+box & getBigger(box & b1, box & b2) {
+    return (b1.volume > b2.volume) ? b1 : b2;
+}
+
+void functionSignaturesMore() {
+
+    printItAgainSam("hello");
+    printItAgainSam("hello", 1);
+    printItAgainSam("hello", 1);
+}
+
+void printItAgainSam(const char * message, int again) {
+
+    static int count = 0;
+    count++;
+
+    int times = 1;
+
+    if (again > 0) {
+        times = count;
+    }
+
+    cout << "printing " << times << " times." << endl;
+
+    while (times--) {
+        cout << message << endl;
+    }
 }
