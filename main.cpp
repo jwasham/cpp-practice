@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 #include "practice.h"
 
 int main() {

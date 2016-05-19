@@ -63,9 +63,11 @@ void showCandy(const CandyBar &);
 void testMaxN();
 
 template <class T>
-T maxn(const T * arr, int count = 5) {
+T maxn(T arr[], int count) {
 
     T max = 0;
+
+    std::cout << "running maxn" << std::endl;
 
     for (int i = 0; i < count; i++) {
         if (arr[i] > max) {
@@ -74,6 +76,26 @@ T maxn(const T * arr, int count = 5) {
     }
 
     return max;
+}
+
+template <>
+const char * maxn(const char * arr[], int count) {
+
+    const char * longest = arr[0];
+    int longestLength = 0;
+
+    std::cout << "-------" << std::endl;
+
+    for (int i = 0; i < count; i++) {
+        std::cout << "Checking: " << arr[i] << std::endl;
+        int length = strlen(arr[i]);
+        if (length > longestLength) {
+            longest = arr[i];
+            longestLength = length;
+        }
+    }
+
+    return longest;
 }
 
 #include "practice.cpp"

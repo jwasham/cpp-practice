@@ -434,13 +434,32 @@ void showCandy(const CandyBar & bar) {
 }
 
 void testMaxN() {
-    int textInts[] {23, 35, 7, 2, 9};
+    int textInts[] {23, 35, 7, 2};
 
-    int maxInt = maxn(textInts);
+    int maxInt = maxn(textInts, 4);
+    assert(maxInt == 35);
+
     cout << "Max int: " << maxInt << endl;
 
-    double testDbls[] {0.2, 43.2, 0.002, 5.2, 9.3};
+    double testDbls[] {0.2, 43.2, 0.002, 5.2, 9.3, 12.4};
 
-    double maxDbl = maxn(testDbls);
+    double maxDbl = maxn(testDbls, 6);
+    assert(maxDbl == 43.2);
     cout << "Max double: " << maxDbl << endl;
+
+    char w1[] = "hello";
+    char w2[] = "friends";
+    char w3[] = "top";
+    char w4[] = "fellow";
+
+    const char * words[4] {
+        w1,
+        w2,
+        w3,
+        w4
+    };
+
+    const char * result = maxn(words, 4);
+
+    cout << "longest strings is: " << result << endl;
 }
